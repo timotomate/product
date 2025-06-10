@@ -1,3 +1,4 @@
+//로직 중심. 실제 기능을 처리. (예: 상품 등록, 재고 증감 등)
 package timo.inventory.service;
 
 import lombok.RequiredArgsConstructor;

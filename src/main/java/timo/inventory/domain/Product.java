@@ -16,4 +16,12 @@ public class Product {
     private String name;     // 상품명
     private Integer price;   // 가격
     private Integer stock;   // 현재 재고 수량
+
+    public Product(Long id, String name, Integer price, Integer stock) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.stock = stock;
+    }
+
 }
