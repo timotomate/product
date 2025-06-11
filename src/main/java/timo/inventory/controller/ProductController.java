@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import timo.inventory.domain.Product;
 import timo.inventory.dto.ProductRequest;
 import timo.inventory.dto.ProductResponse;
+import timo.inventory.dto.StockUpdateRequest;
 import timo.inventory.service.ProductService;
 
 import java.util.List;
@@ -38,4 +39,12 @@ public class ProductController {
                 .map(p -> new ProductResponse(p.getId(), p.getName(), p.getPrice(), p.getStock()))
                 .collect(Collectors.toList());
     }
+
+    // 입출고
+    @PatchMapping("/{id}/stock")
+    public ProductResponse updateStock(@PathVariable Long id, @RequestBody StockUpdateRequest request) {
+        Product updated = productService.updateStock(id, request.getQuantity());
+        return new ProductResponse(updated.getId(), updated.getName(), updated.getPrice(), updated.getStock());
+    }
+
 }

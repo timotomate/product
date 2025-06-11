@@ -24,4 +24,7 @@ public class Product {
         this.stock = stock;
     }
 
+    public void setStock(Integer stock) {
+        this.stock = stock;
+    }
 }
